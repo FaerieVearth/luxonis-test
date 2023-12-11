@@ -1,11 +1,12 @@
-const express = require('express');
+const express = require("express");
 const app = express();
+
 const cors = require('cors');
 const pool = require('./db');
 
 app.use(cors());
+app.options('*', cors());
 app.use(express.json());
-
 
 //write query with pagination
 app.get('/apartments', async (req, res) => {
@@ -22,7 +23,5 @@ app.get('/apartments', async (req, res) => {
   }
 });
 
-
-// get 40 apartments
-
-app.listen(5000, () => console.log('Server running on port 5000'));
+const port = process.env.PORT || 5000;
+app.listen(port, () => console.log(`Listening on port ${port}...`));

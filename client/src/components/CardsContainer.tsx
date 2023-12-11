@@ -23,8 +23,8 @@ const CardsContainer: React.FC = () => {
   };
 
   useEffect(() => {
-    fetchApartments(currentPage);
-  }, [currentPage, itemsPerPage]);
+    fetchApartments(currentPage); 
+  }, [currentPage, itemsPerPage, fetchApartments]);
 
   return (
     <div>

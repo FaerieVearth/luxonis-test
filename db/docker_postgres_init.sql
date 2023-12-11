@@ -1,9 +1,11 @@
-CREATE DATABASE apartmentsdb;
-
+CREATE USER me;
+CREATE DATABASE api;
+GRANT ALL PRIVILEGES ON DATABASE api TO me;
+\c api 
 CREATE TABLE apartments
 (
     id SERIAL PRIMARY KEY,
-    name	VARCHAR(255),
+    name VARCHAR(255),
     url	VARCHAR(255),
     address	VARCHAR(255),
     price	VARCHAR(255)
@@ -509,4 +511,3 @@ INSERT INTO apartments (name, url, address, price) VALUES ('For sale apartment 3
 INSERT INTO apartments (name, url, address, price) VALUES ('For sale apartment 3+1 75 m²', 'https://d18-a.sdn.cz/d_18/c_img_QK_Jr/gBwxTR.jpeg?fl=res,400,300,3|shr,,20|jpg,90', 'Vlnařská, Liberec - Liberec VI-Rochlice', '3 690 000 CZK');
 INSERT INTO apartments (name, url, address, price) VALUES ('For sale apartment 2+1 51 m²', 'https://d18-a.sdn.cz/d_18/c_img_QN_KC/1jvhlZ.jpeg?fl=res,400,300,3|shr,,20|jpg,90', 'Místecká, Praha 9 - Letňany', '5 490 000 CZK');
 INSERT INTO apartments (name, url, address, price) VALUES ('For sale apartment 3+kt 156 m²', 'https://d18-a.sdn.cz/d_18/c_img_QR_MI/D9hBymQ.jpeg?fl=res,400,300,3|shr,,20|jpg,90', 'Rostovská, Praha 10 - Vršovice', '19 999 000 CZK');
-
