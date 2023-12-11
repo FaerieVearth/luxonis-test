@@ -1,0 +1,11 @@
+FROM node:latest
+RUN mkdir -p /server/config /server/src
+WORKDIR /server
+
+COPY package.json /server/package.json
+COPY package-lock.json /server/package-lock.json
+
+EXPOSE 5000
+RUN npm install
+
+CMD ["npm", "run", "start:dev"]
